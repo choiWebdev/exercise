@@ -1,0 +1,30 @@
+.flex_box {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.ipt_txt {
+  height: 5rem;
+  padding: 0 2rem;
+  border: none;
+  background-color: transparent;
+}
+
+.btn_submit {
+  width: 12rem;
+  height: 4rem;
+  background-color: transparent;
+  border: 1px solid var(--main-color);
+  border-radius: 5px;
+  font-family: var(--event-font);
+  color: var(--main-color);
+  text-align: center;
+  cursor: pointer;
+  transition: .2s;
+}
+
+.btn_submit:hover {
+  color: #fff;
+  background-color: var(--main-color);
+}
