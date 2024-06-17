@@ -1,0 +1,22 @@
+.task_line {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.task_chk {
+  display: block;
+  width: 2rem;
+  height: 2rem;
+  background: url(../img/task_chk.svg) no-repeat center/cover;
+  cursor: pointer;
+}
+
+.task_chk.task_done {
+  background-image: url(../img/task_done.svg);
+}
+
+/* .task_txt {
+  flex: 1;
+}
+ */

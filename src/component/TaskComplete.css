@@ -1,0 +1,28 @@
+#header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+#task_filter {
+  display: flex;
+  gap: .5rem;
+}
+
+.filter_item {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--main-color);
+  border-radius: 3px;
+  font-family: var(--event-font);
+  font-size: 1.4rem;
+  color: var(--main-color);
+  line-height: 1;
+  transition: .2s;
+}
+
+.filter_item.active,
+.filter_item:hover {
+  background-color: var(--main-color);
+  color: #fff;
+}

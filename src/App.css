@@ -47,7 +47,6 @@ input, select, textarea, button {
 html {
   font-family: 'Pretendard', sans-serif;
   font-size: 10px;
-  background-color: url(img/bg_paper.jpg) no-repeat #fff3dc center/cover;
 }
 
 body {
@@ -60,15 +59,19 @@ body {
   max-width: 800px;
   height: calc(100vh - 10rem);
   margin: 5rem auto;
-  border: 1px solid var(--main-color);
+  border: 2px solid var(--main-color);
+  border-radius: 5px;
   overflow: hidden;
 }
 
 #header {
   padding: 2rem 3rem;
-  font-family: var(--event-font);
+  border-bottom: 1px solid var(--main-color);
+}
+
+#header h1 {
   font-size: 4rem;
+  font-family: var(--event-font);
   font-weight: bold;
   color: var(--main-color);
-  border-bottom: 1px solid var(--main-color);
 }
