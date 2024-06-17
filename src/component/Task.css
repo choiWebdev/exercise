@@ -2,6 +2,7 @@
   display: flex;
   align-items: center;
   width: 100%;
+  padding: .5rem 1rem .5rem .5rem;
 }
 
 .task_chk {
@@ -12,11 +13,29 @@
   cursor: pointer;
 }
 
-.task_chk.task_done {
+.task_txt {
+  flex: 1;
+}
+
+.btn_del {
+  padding: .5rem 1rem;
+  border: 1px solid var(--main-color);
+  border-radius: 4px;
+  font-size: 1.3rem;
+  color: var(--main-color);
+  transition: .2s;
+}
+
+.btn_del:hover {
+  background-color: var(--main-color);
+  color: #fff;
+}
+
+.task_done .task_chk {
   background-image: url(../img/task_done.svg);
 }
 
-/* .task_txt {
-  flex: 1;
+.task_done .task_txt {
+  text-decoration: line-through;
+  color: #666;
 }
- */
