@@ -2,7 +2,8 @@
   display: flex;
   align-items: center;
   width: 100%;
-  padding: .5rem 1rem .5rem .5rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--main-color);
 }
 
 .task_chk {
@@ -15,18 +16,35 @@
 
 .task_txt {
   flex: 1;
+  padding: 1rem 0.5rem;
+  line-height: 1;
 }
 
-.btn_del {
+.task_txt.visible {
+  display: flex;
+}
+
+.task_txt.hidden {
+  display: none;
+}
+
+.btn_wrap {
+  display: flex;
+  gap: 5px;
+}
+
+.btn {
   padding: .5rem 1rem;
   border: 1px solid var(--main-color);
   border-radius: 4px;
+  font-family: var(--event-font);
   font-size: 1.3rem;
   color: var(--main-color);
+  cursor: pointer;
   transition: .2s;
 }
 
-.btn_del:hover {
+.btn:hover {
   background-color: var(--main-color);
   color: #fff;
 }
@@ -38,4 +56,36 @@
 .task_done .task_txt {
   text-decoration: line-through;
   color: #666;
+}
+
+.edit_wrap {
+  flex: 1;
+  position: relative;
+  padding-right: 1rem;
+}
+
+.edit_wrap.hidden {
+  display: none;
+}
+
+.edit_wrap.visible {
+  display: block;
+}
+
+.edit_wrap .ipt_edit {
+  border: 1px solid var(--main-color);
+  border-radius: 4px;
+  padding: calc(1rem - 2px) 0.5rem;
+  width: calc(100% - 100px);
+}
+
+.edit_wrap .ipt_edit:focus {
+  outline: none;
+}
+
+.edit_wrap .btn_edit_done {
+  position: absolute;
+  top: 50%;
+  right: 1rem;
+  transform: translateY(-50%);
 }

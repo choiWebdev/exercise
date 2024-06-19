@@ -1,0 +1,16 @@
+.task_list {
+  padding: 0 1.4rem;
+  max-height: 660px;
+  overflow-y: auto;
+}
+
+.task_list::-webkit-scrollbar-thumb {
+  width: 6px;
+  border-radius: 10px;
+  background-color: var(--main-color);
+}
+
+.task_list::-webkit-scrollbar-track {
+  
+  width: 6px;
+}

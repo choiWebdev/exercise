@@ -9,7 +9,6 @@ export default function Input({ onAddTask }) {
     if (newTask.trim() === '') return;
     if (newTask.length > 30) {
       alert('30자 이하로 작성해주세요.');
-      e.focus();
       return false;
     }
     onAddTask(newTask);

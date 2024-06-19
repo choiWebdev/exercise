@@ -8,35 +8,30 @@ import useFetch from './component/useFetch';
 
 document.getElementsByTagName('html')[0].style.backgroundImage = `url(${paperBg})`;
 
-function App() {
-  const [taskData, setTaskData] = useState([]); // 할 일 데이터 상태
-  const [filteredTasks, setFilteredTasks] = useState([]); // 필터링된 할 일 데이터 상태
-  const [url, setUrl] = useState('http://localhost:3001/tasks'); // API URL
-  const [result, addTask, deleteTask, isDoneTask] = useFetch(url); // useFetch 훅 사용
+export default function App() {
+  const [taskData, setTaskData] = useState([]);
+  const [filteredTasks, setFilteredTasks] = useState([]);
+  const url = 'http://localhost:3001/tasks';
+  const [result, addTask, deleteTask, updateTask] = useFetch(url);
 
-  // 데이터 가져오기 useEffect
   useEffect(() => {
     setTaskData(result);
     setFilteredTasks(result);
   }, [result]);
 
-  // 새로운 할 일 추가 함수
   const handleAddTask = (newTask) => {
     const task = { task: newTask, isDone: false };
     addTask(task);
   };
 
-  // 할 일 삭제 함수
   const handleDeleteTask = (id) => {
     deleteTask(id);
   };
 
-  // 할 일 업데이트 함수
   const handleUpdateTask = (id, updatedTask) => {
-    isDoneTask(id, updatedTask);
+    updateTask(id, updatedTask);
   };
 
-  // 할 일 필터링 함수
   const filterTasks = (filterType) => {
     switch (filterType) {
       case 'all':
@@ -58,12 +53,15 @@ function App() {
     <div className="App">
       <header id="header">
         <h1>My To Do List</h1>
-        <TaskComplete taskData={taskData} filterTasks={filterTasks} />
+        <TaskComplete filterTasks={filterTasks} />
       </header>
       <Input onAddTask={handleAddTask} />
-      <TaskList taskData={filteredTasks} deleteTask={handleDeleteTask} isDoneTask={handleUpdateTask} />
+      <TaskList 
+        taskData={filteredTasks} 
+        deleteTask={handleDeleteTask} 
+        isDoneTask={handleUpdateTask} // 이 라인을 추가
+        updateTask={handleUpdateTask} 
+      />
     </div>
   );
 }
-
-export default App;
